@@ -29,7 +29,7 @@ class ApiProblemResponse extends Response
     {
         $this->apiProblem = $apiProblem;
         $this->setCustomStatusCode($apiProblem->status);
-        $this->setReasonPhrase($apiProblem->title);
+        $this->setReasonPhrase($apiProblem->title ?? '');
 
         $this->jsonFlags = JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR;
     }
